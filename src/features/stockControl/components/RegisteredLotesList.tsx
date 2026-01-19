@@ -1,10 +1,18 @@
-import { Box, Heading, Text, Button, Flex, Spinner, Center } from "@chakra-ui/react";
+import { Box, Heading, Text, Button, Flex, Spinner, Center, Badge } from "@chakra-ui/react";
 import { useLotes, useDeleteLote } from "../hooks/useLotes";
 import { EditLoteModal } from "./EditLoteModal";
+import { useEffect } from "react";
+import { checkAndAlertLowStock, getStockStatus } from "@/shared/utils/stockAlerts";
 
 export const RegisteredLotesList = () => {
   const { data: lotes = [], isLoading, isError } = useLotes();
   const deleteLote = useDeleteLote();
+
+  useEffect(() => {
+    if (lotes.length > 0) {
+      checkAndAlertLowStock(lotes);
+    }
+  }, [lotes]);
 
   if (isLoading) {
     return (
@@ -64,29 +72,44 @@ export const RegisteredLotesList = () => {
             No hay lotes registrados
           </Text>
         ) : (
-          lotes.map((lote) => (
+          lotes.map((lote) => {
+            const stockStatus = getStockStatus(lote.stock_actual);
+            return (
             <Box
               key={lote.id}
               p={4}
               border="1px solid"
-              borderColor="gray.200"
+              borderColor={lote.stock_actual < 100 ? "orange.300" : "gray.200"}
               borderRadius="md"
+              bg={lote.stock_actual < 100 ? stockStatus.bgColor : "white"}
               _hover={{ borderColor: "gray.300", shadow: "sm" }}
               transition="all 0.2s"
             >
               <Flex justify="space-between" align="start">
                 <Box flex="1">
-                  <Heading size="sm" mb={2}>
-                    {lote.codigo_lote}
-                  </Heading>
+                  <Flex align="center" gap={2} mb={2}>
+                    <Heading size="sm">
+                      {lote.codigo_lote}
+                    </Heading>
+                    {lote.stock_actual < 100 && (
+                      <Badge colorPalette="orange" size="sm">
+                        {stockStatus.label}
+                      </Badge>
+                    )}
+                    {lote.stock_actual === 0 && (
+                      <Badge colorPalette="red" size="sm">
+                        Sin stock
+                      </Badge>
+                    )}
+                  </Flex>
                   <Text fontSize="sm" color="gray.600" mb={1}>
                     <Text as="span" fontWeight="medium">ID Vacuna:</Text> {lote.fk_vacunas}
                   </Text>
                   <Text fontSize="sm" color="gray.600" mb={1}>
                     <Text as="span" fontWeight="medium">Cantidad Total:</Text> {lote.cantidad_total} dosis
                   </Text>
-                  <Text fontSize="sm" color="gray.600" mb={1}>
-                    <Text as="span" fontWeight="medium">Stock Actual:</Text> {lote.stock_actual} dosis
+                  <Text fontSize="sm" color={stockStatus.color} mb={1} fontWeight="medium">
+                    <Text as="span" fontWeight="bold">Stock Actual:</Text> {lote.stock_actual} dosis
                   </Text>
                   <Text fontSize="sm" color="gray.600">
                     <Text as="span" fontWeight="medium">Vencimiento:</Text> {lote.fecha_vencimiento}
@@ -110,7 +133,8 @@ export const RegisteredLotesList = () => {
                 </Flex>
               </Flex>
             </Box>
-          ))
+          );
+          })
         )}
       </Box>
     </Box>
