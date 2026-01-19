@@ -10,6 +10,7 @@ const Products = lazy(() => import("@/features/products/Products"));
 const StockControl = lazy(() => import("@/features/stockControl/StockControl"));
 const Vaccines = lazy(() => import("@/features/vaccines/Vaccines"));
 const Transfers = lazy(() => import("@/features/transfer/Transfers"));
+const DataExport = lazy(() => import("@/features/dataExport/DataExport"));
 
 const LoadingFallback = () => (
   <Center minH="100vh">
@@ -32,6 +33,7 @@ const AppRoutes = () => {
             <Route path="/lotes" element={<StockControl />} />
             <Route path="/vacunas" element={<Vaccines />} />
             <Route path="/traslados" element={<Transfers />} />
+            <Route path="/importar-exportar" element={<DataExport />} />
           </Route>
         </Routes>
       </Suspense>

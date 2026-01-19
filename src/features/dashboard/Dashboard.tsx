@@ -37,7 +37,7 @@ export default function Dashboard() {
       icon: FileSpreadsheet,
       title: "Importar/Exportar",
       description: "Importa datos desde Excel o exporta reportes",
-      onAccess: () => console.log("Acceder a Importar/Exportar"),
+      onAccess: () => navigate("/importar-exportar"),
     },
   ];
 
