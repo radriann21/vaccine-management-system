@@ -25,7 +25,7 @@ export const RegisteredLotesList = () => {
         borderColor="gray.200"
       >
         <Center py={8}>
-          <Spinner size="lg" color="#5B3FFF" />
+          <Spinner size="lg" color="#9575CD" />
         </Center>
       </Box>
     );
@@ -41,7 +41,7 @@ export const RegisteredLotesList = () => {
         border="1px solid"
         borderColor="gray.200"
       >
-        <Text color="red.500" textAlign="center" py={8}>
+        <Text color="pink.400" textAlign="center" py={8}>
           Error al cargar los lotes
         </Text>
       </Box>
@@ -79,7 +79,7 @@ export const RegisteredLotesList = () => {
               key={lote.id}
               p={4}
               border="1px solid"
-              borderColor={lote.stock_actual < 100 ? "orange.300" : "gray.200"}
+              borderColor={lote.stock_actual < 100 ? "orange.200" : "gray.200"}
               borderRadius="md"
               bg={lote.stock_actual < 100 ? stockStatus.bgColor : "white"}
               _hover={{ borderColor: "gray.300", shadow: "sm" }}
@@ -97,7 +97,7 @@ export const RegisteredLotesList = () => {
                       </Badge>
                     )}
                     {lote.stock_actual === 0 && (
-                      <Badge colorPalette="red" size="sm">
+                      <Badge colorPalette="pink" size="sm">
                         Sin stock
                       </Badge>
                     )}
@@ -119,7 +119,7 @@ export const RegisteredLotesList = () => {
                   <EditLoteModal lote={lote} />
                   <Button
                     variant="ghost"
-                    colorPalette="red"
+                    colorPalette="pink"
                     size="sm"
                     onClick={() => {
                       if (window.confirm(`¿Estás seguro de eliminar el lote "${lote.codigo_lote}"?`)) {

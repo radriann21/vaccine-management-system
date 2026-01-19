@@ -38,10 +38,10 @@ export const ModuleCard = ({ icon: Icon, title, description, onAccess }: ModuleC
           </Text>
         </Box>
         <Button
-          bg="#5B3FFF"
+          bg="#9575CD"
           color="white"
           w="full"
-          _hover={{ bg: "#4A32CC" }}
+          _hover={{ bg: "#7E57C2" }}
           onClick={onAccess}
         >
           Acceder

@@ -57,7 +57,7 @@ export const EditAmbulatoryModal = ({ ambulatory }: EditAmbulatoryModalProps) =>
         <Button
           variant="outline"
           size="sm"
-          colorPalette="blue"
+          colorPalette="cyan"
         >
           Editar
         </Button>
@@ -138,9 +138,9 @@ export const EditAmbulatoryModal = ({ ambulatory }: EditAmbulatoryModalProps) =>
               <Button
                 type="submit"
                 form="edit-ambulatory-form"
-                bg="#5B3FFF"
+                bg="#9575CD"
                 color="white"
-                _hover={{ bg: "#4A32CC" }}
+                _hover={{ bg: "#7E57C2" }}
                 loading={updateAmbulatory.isPending}
               >
                 Guardar Cambios

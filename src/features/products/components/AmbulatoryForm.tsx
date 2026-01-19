@@ -120,11 +120,11 @@ export const AmbulatoryForm = () => {
 
             <Button
               type="submit"
-              bg="#10B981"
+              bg="#81C784"
               color="white"
               w="full"
               mt={2}
-              _hover={{ bg: "#059669" }}
+              _hover={{ bg: "#66BB6A" }}
               loading={createAmbulatory.isPending}
             >
               Agregar Ambulatorio

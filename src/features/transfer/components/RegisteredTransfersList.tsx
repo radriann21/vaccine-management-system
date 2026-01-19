@@ -17,7 +17,7 @@ export const RegisteredTransfersList = () => {
         borderColor="gray.200"
       >
         <Center py={8}>
-          <Spinner size="lg" color="#5B3FFF" />
+          <Spinner size="lg" color="#9575CD" />
         </Center>
       </Box>
     );
@@ -33,7 +33,7 @@ export const RegisteredTransfersList = () => {
         border="1px solid"
         borderColor="gray.200"
       >
-        <Text color="red.500" textAlign="center" py={8}>
+        <Text color="pink.400" textAlign="center" py={8}>
           Error al cargar los traslados
         </Text>
       </Box>
@@ -101,7 +101,7 @@ export const RegisteredTransfersList = () => {
                   <EditTransferModal transfer={transfer} />
                   <Button
                     variant="ghost"
-                    colorPalette="red"
+                    colorPalette="pink"
                     size="sm"
                     onClick={() => {
                       if (window.confirm(`¿Estás seguro de eliminar este traslado?`)) {

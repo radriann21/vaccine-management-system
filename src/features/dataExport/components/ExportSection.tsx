@@ -49,12 +49,12 @@ export const ExportSection = ({
         </Text>
       </Box>
       <Button
-        bg="#A855F7"
+        bg="#9575CD"
         color="white"
         size="lg"
         onClick={handleExport}
         loading={isExporting}
-        _hover={{ bg: "#9333EA" }}
+        _hover={{ bg: "#7E57C2" }}
       >
         <Download size={20} />
         {buttonLabel}

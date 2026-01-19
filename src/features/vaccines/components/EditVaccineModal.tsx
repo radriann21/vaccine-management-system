@@ -55,7 +55,7 @@ export const EditVaccineModal = ({ vaccine }: EditVaccineModalProps) => {
         <Button
           variant="outline"
           size="sm"
-          colorPalette="blue"
+          colorPalette="cyan"
         >
           Editar
         </Button>
@@ -114,9 +114,9 @@ export const EditVaccineModal = ({ vaccine }: EditVaccineModalProps) => {
               <Button
                 type="submit"
                 form="edit-vaccine-form"
-                bg="#5B3FFF"
+                bg="#9575CD"
                 color="white"
-                _hover={{ bg: "#4A32CC" }}
+                _hover={{ bg: "#7E57C2" }}
                 loading={updateVaccine.isPending}
               >
                 Guardar Cambios

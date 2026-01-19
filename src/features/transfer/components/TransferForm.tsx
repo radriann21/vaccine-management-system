@@ -146,11 +146,11 @@ export const TransferForm = () => {
 
             <Button
               type="submit"
-              bg="#F59E0B"
+              bg="#FF9F66"
               color="white"
               w="full"
               mt={2}
-              _hover={{ bg: "#D97706" }}
+              _hover={{ bg: "#FF8A50" }}
               loading={createTransfer.isPending}
             >
               Registrar Traslado

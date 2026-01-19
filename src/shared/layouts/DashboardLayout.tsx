@@ -15,7 +15,7 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
         <Container maxW="1400px">
           <Flex justify="space-between" align="center">
             <Flex align="center" gap={3}>
-              <Icon p={2} bgColor="#5B3FFF" color="white" rounded="md">
+              <Icon p={2} bgColor="#9575CD" color="white" rounded="md">
                 <Antenna size={24} />
               </Icon>
               <Box>

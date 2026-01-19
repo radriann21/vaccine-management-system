@@ -130,11 +130,11 @@ export const LoteForm = () => {
 
             <Button
               type="submit"
-              bg="#5B3FFF"
+              bg="#9575CD"
               color="white"
               w="full"
               mt={2}
-              _hover={{ bg: "#4A32CC" }}
+              _hover={{ bg: "#7E57C2" }}
               loading={createLote.isPending}
             >
               Agregar Lote

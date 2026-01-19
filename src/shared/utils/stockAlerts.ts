@@ -38,23 +38,23 @@ export const getStockStatus = (stock: number): {
 } => {
   if (stock === 0) {
     return {
-      color: "red.600",
+      color: "red.400",
       label: "Sin stock",
-      bgColor: "red.50",
+      bgColor: "red.100",
     };
   }
   
   if (stock < LOW_STOCK_THRESHOLD) {
     return {
-      color: "orange.600",
+      color: "orange.400",
       label: "Stock bajo",
-      bgColor: "orange.50",
+      bgColor: "orange.100",
     };
   }
   
   return {
-    color: "green.600",
+    color: "green.400",
     label: "Stock normal",
-    bgColor: "green.50",
+    bgColor: "green.100",
   };
 };

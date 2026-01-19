@@ -62,7 +62,7 @@ export const EditLoteModal = ({ lote }: EditLoteModalProps) => {
         <Button
           variant="outline"
           size="sm"
-          colorPalette="blue"
+          colorPalette="cyan"
         >
           Editar
         </Button>
@@ -173,9 +173,9 @@ export const EditLoteModal = ({ lote }: EditLoteModalProps) => {
               <Button
                 type="submit"
                 form="edit-lote-form"
-                bg="#5B3FFF"
+                bg="#9575CD"
                 color="white"
-                _hover={{ bg: "#4A32CC" }}
+                _hover={{ bg: "#7E57C2" }}
                 loading={updateLote.isPending}
               >
                 Guardar Cambios

@@ -4,9 +4,17 @@ import { ModuleCard } from "./components/ModuleCard";
 import { StatCard } from "./components/StatCard";
 import { Package, Building2, Syringe, FileSpreadsheet, Pill } from "lucide-react";
 import { useNavigate } from "react-router";
+import { useLotes } from "@/features/stockControl/hooks/useLotes";
+import { useAmbulatories } from "@/features/products/hooks/useAmbulatories";
+import { useTransfers } from "@/features/transfer/hooks/useTransfers";
+import { useVaccines } from "@/features/vaccines/hooks/useVaccines";
 
 export default function Dashboard() {
   const navigate = useNavigate();
+  const { data: lotes = [] } = useLotes();
+  const { data: ambulatories = [] } = useAmbulatories();
+  const { data: transfers = [] } = useTransfers();
+  const { data: vaccines = [] } = useVaccines();
 
   const modules = [
     {
@@ -42,10 +50,10 @@ export default function Dashboard() {
   ];
 
   const statistics = [
-    { value: 0, label: "Lotes Registrados", color: "#5B3FFF" },
-    { value: 0, label: "Ambulatorios", color: "#10B981" },
-    { value: 0, label: "Traslados", color: "#F59E0B" },
-    { value: 0, label: "Últimos Reportes", color: "#8B5CF6" },
+    { value: lotes.length, label: "Lotes Registrados", color: "#9575CD" },
+    { value: ambulatories.length, label: "Ambulatorios", color: "#81C784" },
+    { value: transfers.length, label: "Traslados", color: "#FF9F66" },
+    { value: vaccines.length, label: "Vacunas Registradas", color: "#5B8DBE" },
   ];
 
   return (

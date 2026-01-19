@@ -17,7 +17,7 @@ export const RegisteredAmbulatoriesList = () => {
         borderColor="gray.200"
       >
         <Center py={8}>
-          <Spinner size="lg" color="#5B3FFF" />
+          <Spinner size="lg" color="#9575CD" />
         </Center>
       </Box>
     );
@@ -33,7 +33,7 @@ export const RegisteredAmbulatoriesList = () => {
         border="1px solid"
         borderColor="gray.200"
       >
-        <Text color="red.500" textAlign="center" py={8}>
+        <Text color="pink.400" textAlign="center" py={8}>
           Error al cargar los ambulatorios
         </Text>
       </Box>
@@ -97,7 +97,7 @@ export const RegisteredAmbulatoriesList = () => {
                   <EditAmbulatoryModal ambulatory={ambulatory} />
                   <Button
                     variant="ghost"
-                    colorPalette="red"
+                    colorPalette="pink"
                     size="sm"
                     onClick={() => {
                       if (window.confirm(`¿Estás seguro de eliminar "${ambulatory.nombre}"?`)) {
